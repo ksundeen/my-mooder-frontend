@@ -1,0 +1,33 @@
+{
+    "build": {
+        "preview": {
+            "distribution": "internal",
+            "ios": {
+                "enterpriseProvisioning": "adhoc"
+              }        
+        },
+        "development": {
+            "ios": {
+                "simulator": true
+            },
+            "developmentClient": true,
+            "distribution": "internal",
+            "env": {
+                "EXPO_PUBLIC_API_URL": "https://localhost:8081"
+            }
+        },
+        "test": {
+            "ios": {
+                "enterpriseProvisioning": "adhoc"
+            },
+            "distribution": "internal",
+            "autoIncrement": true,
+            "env": {
+                "EXPO_PUBLIC_API_URL": "https://localhost:8082"
+            }
+        },
+        "production": {
+            "autoIncrement": true
+        }
+    }
+  }
