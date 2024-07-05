@@ -1,4 +1,4 @@
-import { MapComponent } from '@/components/MapComponent';
+import { MapComponent } from '../components/MapComponent';
 import { StyleSheet, SafeAreaView } from 'react-native';
 
 export default function Map() {

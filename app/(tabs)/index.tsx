@@ -1,8 +1,8 @@
 import { Image, StyleSheet, View } from 'react-native';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { Collapsible } from '@/components/Collapsible';
+import ParallaxScrollView from '../components/ParallaxScrollView';
+import { ThemedText } from '../components/ThemedText';
+import { ThemedView } from '../components/ThemedView';
+import { Collapsible } from '../components/Collapsible';
 
 export default function HomeScreen() {
   return (
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     height: 250,
-    width: 400,
+    width: 425,
     position: 'relative',
   },
 });

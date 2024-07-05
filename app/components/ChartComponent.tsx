@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { COUNTRIES } from '@/assets/data/Countries';
 import Svg, { G, Path, Circle } from "react-native-svg";
 import * as d3 from 'd3';
-import { Colors } from '@/constants/Colors';
+import { Colors } from '@/app/constants/Colors';
 
 export function ChartComponent(props: {width: number, height: number}) {
     const { width, height } = props;

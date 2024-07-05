@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Slider, { SliderProps } from '@react-native-community/slider';
-import { Colors } from '@/constants/Colors';
+import { Colors } from '@/app/constants/Colors';
 
 export function MoodSlider(props: {clearState: boolean}) {
     const { clearState } = props

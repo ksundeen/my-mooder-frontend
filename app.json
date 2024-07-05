@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "My Mood Frontend",
+    "name": "My Mooder Frontend",
     "slug": "my-mooder-frontend",
+    "description": "My Mooder is an application that aims to help transform an individual’s personal view of 'mental illness' from an issue of 'mental health' to 'mood awareness' through data analytics and mood value tracking across time and space.",
     "version": "0.0.3",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/geoi.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -15,15 +16,15 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ksundeen.mymooderfrontend",
-      "buildNumber": "2"
+      "buildNumber": "4"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/geoi.png",
+        "backgroundColor": "#fffafff"
       },
       "package": "com.ksundeen.mymooderfrontend",
-      "versionCode": 2
+      "versionCode": 11
     },
     "web": {
       "bundler": "metro",
@@ -31,7 +32,18 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
+          "locationAlwaysPermission": "Allow $(PRODUCT_NAME) to use your location",
+          "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

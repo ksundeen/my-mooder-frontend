@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { LatLng, LeafletView, MapMarker } from 'react-native-leaflet-view-2';
 import favoritePlaces from '@/assets/data/favorite-places';
-import { Colors } from '@/constants/Colors';
+import { Colors } from '@/app/constants/Colors';
 
 export function MapComponent() {
   const DEFAULT_COORDINATE: LatLng = {

@@ -62,7 +62,7 @@ macos-install-nvm:
     {{package_manager}} --version > {{nvm_dir}}/.nvmrc 
 
 
-A0_clean_npm_cache:
+clean_npm_cache:
     #!/usr/bin/env bash
     set {{flags}}
 
@@ -85,7 +85,7 @@ A0_clean clean_cache:
 
     if [ {{clean_cache}} == "clean" ]
     then
-        just A0_clean_npm_cache
+        just clean_npm_cache
     fi
 
     echo -e "\n########################################"
@@ -243,7 +243,7 @@ configure-android-credentials:
     
     #### /Android credentials ######
 
-E_expo-build-android:
+E_local-expo-build-android:
     #!/usr/bin/env bash
     set {{flags}}
 
@@ -261,7 +261,7 @@ E_expo-build-android:
     echo -e "\n################################"
     echo "#### RUNNING COMMAND: eas login"
     echo -e "################################\n"
-    eas login
+    # eas login
 
     # Do you need to configure credentials? Use
     # just configure-android-credentials
@@ -278,17 +278,13 @@ E_expo-build-android:
     echo -e "#########################################################################################\n"
     npx expo prebuild
 
-    # Create the build
-    echo -e "\n#################################################################################"
-    echo "#### RUNNING COMMAND: eas build --platform android --profile {{eas_build_profile}}"
-    echo -e "#################################################################################\n"
-    eas build --platform android --profile {{eas_build_profile}}
+    eas build --platform android --profile test --local
 
     # Submit to Android & Apple store, but these need to be production profiles
     # eas submit --platform ios --profile {{eas_build_profile}}
 
 # Build iOS App to Be Transfered to a Expo for deployment through Apps Developer Program
-E_expo-build-ios:
+E_local-expo-build-ios build_local="local":
     #!/usr/bin/env bash
     set {{flags}}
 
@@ -321,7 +317,22 @@ E_expo-build-ios:
     echo "#### RUNNING COMMAND: eas build --platform ios --profile {{eas_build_profile}}"
     echo -e "#############################################################################\n"
     eas build --platform ios --profile {{eas_build_profile}}
-    # eas build --platform all --profile {{eas_build_profile}}
+
+    # Get new credentials if needed
+    eas credentials
+
+    # # Create the build
+    # echo -e "\n#################################################################################"
+    # echo "#### RUNNING COMMAND: eas build --platform android --profile {{eas_build_profile}} local/expo"
+    # echo -e "#################################################################################\n"
+    # if [ {{build_local}} == "expo" ]
+    # then
+    #     eas build --platform ios --profile {{eas_build_profile}}
+    # else
+    #     eas build --platform ios --profile {{eas_build_profile}} --local
+    # fi
+
+    eas build --platform ios --profile test --local
 
     ##### iOS #########
     # Run the build with the iOS internal build and create the registration for it
@@ -367,6 +378,6 @@ clear-cache:
     source ~/.bashrc
     sudo rm -rf ~/.expo
     sudo rm -rf ~/.android
-    sudo rm -rf ~/.gradle
+    sudo rm -rf ~/.gradle/caches
     sudo rm -rf ~/.npm
     sudo rm -rf ~/.yarnrc

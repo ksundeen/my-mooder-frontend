@@ -21,7 +21,18 @@
                 "enterpriseProvisioning": "adhoc"
             },
             "distribution": "internal",
-            "autoIncrement": true,
+            "env": {
+                "EXPO_PUBLIC_API_URL": "https://localhost:8082"
+            }
+        },
+        "test2": {
+            "ios": {
+                "enterpriseProvisioning": "adhoc"
+            },
+            "distribution": "internal",
+            "android": {
+                "buildType": "apk"
+            },
             "env": {
                 "EXPO_PUBLIC_API_URL": "https://localhost:8082"
             }

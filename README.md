@@ -137,7 +137,7 @@ This section review steps for setting up technologies required to run a React Na
 >       # List just commands
 >       just --list
 
-8. Install the Android SDK: follow instructions through Expo android page: https://docs.expo.dev/workflow/android-studio-emulator/
+8. Install the Android Studio and SDK: follow instructions through Expo android page: https://docs.expo.dev/workflow/android-studio-emulator/ to set up the Android Emulator, and set environmental variables.
 
         # Install the Android File-Watching Service, Watchman
         brew install watchman
@@ -216,6 +216,7 @@ This section review steps for setting up technologies required to run a React Na
 
 1. Get Java Runtime to Open Project for XCode tools to get the brew package manager
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 2. Run commands to add brew to your path
 
         (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/Kim/.zprofile
@@ -279,9 +280,13 @@ This section review steps for setting up technologies required to run a React Na
         export NVM_DIR="$HOME/.nvm"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-        export XDG_DATA_HOME="~/Library/pnpm"
+        export XDG_DATA_HOME="$HOME/Library"
+        export XDG_STATE_HOME="$HOME/.pnpm-state"
+        export XDG_CACHE_HOME="$HOME/Library/Caches/pnpm"
         export PNPM_HOME=$XDG_DATA_HOME
-        export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME:$PNPM_HOME"
+        export PATH="${PATH}:$XDG_DATA_HOME:$XDG_STATE_HOME:XDG_CACHE_HOME=:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME"
+        export PATH=$PATH:$ANDROID_HOME/emulator
+        export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ### Other Alternatives to Using a Mac (I have not confirmed these all work):
        
