@@ -273,7 +273,7 @@ This section review steps for setting up technologies required to run a React Na
         # You should see something like this if you have not running containers:
         CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
-13. In total to get both Android and iOS apps to work, this is the ~/.zshrc file I use:
+13. If using `pnpm`, this is the final ~/.zshrc:
                                                       
         export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
         export ANDROID_HOME="/Users/$USER/Library/Android/sdk"
@@ -287,6 +287,19 @@ This section review steps for setting up technologies required to run a React Na
         export PATH="${PATH}:$XDG_DATA_HOME:$XDG_STATE_HOME:XDG_CACHE_HOME=:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME"
         export PATH=$PATH:$ANDROID_HOME/emulator
         export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+14. If using `npm`, this is the final ~/.zhrc:
+
+        export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+        export ANDROID_HOME=$HOME/Library/Android/sdk
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        export XDG_DATA_HOME="$HOME/Library"
+        export ANDROID_TOOLS=$ANDROID_HOME/tools
+        export ANDROID_EMULATOR=$ANDROID_HOME/emulator
+        export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+        export PATH="${PATH}:$XDG_DATA_HOME:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_EMULATOR:$ANDROID_PLATFORM_TOOLS:$JAVA_HOME"
 
 ### Other Alternatives to Using a Mac (I have not confirmed these all work):
        

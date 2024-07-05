@@ -23,7 +23,8 @@
             "distribution": "internal",
             "env": {
                 "EXPO_PUBLIC_API_URL": "https://localhost:8082"
-            }
+            },
+            "node": "20.10.0"
         },
         "test2": {
             "ios": {
@@ -35,10 +36,12 @@
             },
             "env": {
                 "EXPO_PUBLIC_API_URL": "https://localhost:8082"
-            }
+            },
+            "node": "20.10.0"
         },
         "production": {
-            "autoIncrement": true
+            "autoIncrement": true,
+            "node": "20.10.0"
         }
     }
   }

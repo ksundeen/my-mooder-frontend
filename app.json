@@ -3,8 +3,7 @@
     "name": "My Mooder Frontend",
     "slug": "my-mooder-frontend",
     "description": "My Mooder is an application that aims to help transform an individual’s personal view of 'mental illness' from an issue of 'mental health' to 'mood awareness' through data analytics and mood value tracking across time and space.",
-    "version": "0.0.3",
-    "orientation": "portrait",
+    "version": "0.0.4",
     "icon": "./assets/images/geoi.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
@@ -16,7 +15,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ksundeen.mymooderfrontend",
-      "buildNumber": "4"
+      "buildNumber": "5"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,7 +23,7 @@
         "backgroundColor": "#fffafff"
       },
       "package": "com.ksundeen.mymooderfrontend",
-      "versionCode": 11
+      "versionCode": 12
     },
     "web": {
       "bundler": "metro",
@@ -43,6 +42,19 @@
           "isAndroidBackgroundLocationEnabled": true,
           "isAndroidForegroundServiceEnabled": true
         }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.1"
+          },
+          "ios": {
+            "deploymentTarget": "17.5"
+          }
+        }
       ]
     ],
     "experiments": {
@@ -52,6 +64,10 @@
       "router": {
         "origin": false
       },
+      "PRODUCT_NAME": "my-mooder-frontend",
+      "APP_NAME": "my-mooder-frontend",
+      "EAS_BUILD_PROFILE": "test",
+      "NODE_ENV": "test",
       "eas": {
         "projectId": "07f9bcea-1d39-49dd-b0fc-e263cdc7dc6f"
       }

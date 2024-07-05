@@ -211,7 +211,7 @@ D_expo-local-pre-build:
     #!/usr/bin/env bash
     set {{flags}}
 
-    npx expo prebuild --platform all
+    npx expo prebuild --platform all --skip-dependency-update react-native,react --clean
 
 # Build Android App to Be Transfered to a Expo for deployment through Apps Developer Program
 # Runs complete clear of node_modules and reinstalls packages. Then rebuilds local ios and android apps.
@@ -274,9 +274,9 @@ E_local-expo-build-android:
 
     # Pre-build the app
     echo -e "\n#########################################################################################"
-    echo "#### RUNNING COMMAND: npx expo prebuild"
+    echo "#### RUNNING COMMAND: npx expo prebuild --platform android --skip-dependency-update react-native,react --clean"
     echo -e "#########################################################################################\n"
-    npx expo prebuild
+    npx expo prebuild --platform android --skip-dependency-update react-native,react --clean
 
     eas build --platform android --profile test --local
 
@@ -308,9 +308,9 @@ E_local-expo-build-ios build_local="local":
 
     # Pre-build the apps
     echo -e "\n#######################################################"
-    echo "#### RUNNING COMMAND: npx expo prebuild --platform ios"
+    echo "#### RUNNING COMMAND: npx expo prebuild --platform ios --skip-dependency-update react-native,react --clean"
     echo -e "#######################################################\n"
-    npx expo prebuild --platform ios
+    npx expo prebuild --platform ios --skip-dependency-update react-native,react --clean
 
     # Create the build
     echo -e "\n#############################################################################"
