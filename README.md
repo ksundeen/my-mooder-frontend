@@ -137,7 +137,7 @@ This section review steps for setting up technologies required to run a React Na
 >       # List just commands
 >       just --list
 
-8. Install the Android Studio and SDK: follow instructions through Expo android page: https://docs.expo.dev/workflow/android-studio-emulator/ to set up the Android Emulator, and set environmental variables.
+8. Install the Android Studio and SDK: follow instructions through Expo android page: https://docs.expo.dev/workflow/android-studio-emulator/ to set up the Android Emulator, and set environmental variables. Update Android
 
         # Install the Android File-Watching Service, Watchman
         brew install watchman
@@ -145,8 +145,10 @@ This section review steps for setting up technologies required to run a React Na
         # Install the Android SDK on a Mac with Homebrew from https://formulae.brew.sh/cask/android-studio
         brew install --cask android-studio
 
-        # This may prompt that you need the Java SDK version 8, in which case, install it with:
+        # Install the Java SDK with:
         brew install --cask zulu@17
+* After installing Android Studio, update the SDK location through the menu -> Android Studio -> Settings
+<img src="/assets/images/readme-assets/android-studio-gradle.png" width=50% height=50% display=flex justify-content=center>
 
 9. Navigate to the mymooder-frontend directory and use justfile commands to run various commands in this order:
 * Configure the apps
