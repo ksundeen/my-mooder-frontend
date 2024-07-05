@@ -4,7 +4,14 @@
             "distribution": "internal",
             "ios": {
                 "enterpriseProvisioning": "adhoc"
-              }        
+              },
+              "env": {
+                "NODE_ENV": "preview",
+                "ENVIRONMENT": "preview",
+                "PRODUCT_NAME": "my-mooder-frontend",
+                "APP_NAME": "my-mooder-frontend",
+                "EAS_BUILD_PROFILE": "preview"
+              }
         },
         "development": {
             "ios": {
@@ -13,7 +20,12 @@
             "developmentClient": true,
             "distribution": "internal",
             "env": {
-                "EXPO_PUBLIC_API_URL": "https://localhost:8081"
+                "EXPO_PUBLIC_API_URL": "https://localhost:8081",
+                "NODE_ENV": "development",
+                "ENVIRONMENT": "development",
+                "PRODUCT_NAME": "my-mooder-frontend",
+                "APP_NAME": "my-mooder-frontend",
+                "EAS_BUILD_PROFILE": "test"
             }
         },
         "test": {
@@ -22,7 +34,12 @@
             },
             "distribution": "internal",
             "env": {
-                "EXPO_PUBLIC_API_URL": "https://localhost:8082"
+                "EXPO_PUBLIC_API_URL": "https://localhost:8082",
+                "NODE_ENV": "test",
+                "ENVIRONMENT": "test",
+                "PRODUCT_NAME": "my-mooder-frontend",
+                "APP_NAME": "my-mooder-frontend",
+                "EAS_BUILD_PROFILE": "test"
             },
             "node": "20.10.0"
         },
@@ -35,13 +52,22 @@
                 "buildType": "apk"
             },
             "env": {
-                "EXPO_PUBLIC_API_URL": "https://localhost:8082"
+                "EXPO_PUBLIC_API_URL": "https://localhost:8082",
+                "NODE_ENV": "test2"
             },
             "node": "20.10.0"
         },
         "production": {
             "autoIncrement": true,
-            "node": "20.10.0"
+            "node": "20.10.0",
+            "env": {
+                "EXPO_PUBLIC_API_URL": "https://notsure",
+                "NODE_ENV": "production",
+                "ENVIRONMENT": "production",
+                "PRODUCT_NAME": "my-mooder-frontend",
+                "APP_NAME": "my-mooder-frontend",
+                "EAS_BUILD_PROFILE": "production"
+            }
         }
     }
   }

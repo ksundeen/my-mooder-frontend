@@ -47,9 +47,9 @@
         "expo-build-properties",
         {
           "android": {
-            "compileSdkVersion": 35,
-            "targetSdkVersion": 35,
-            "buildToolsVersion": "35.0.1"
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.1"
           },
           "ios": {
             "deploymentTarget": "17.5"
@@ -64,10 +64,6 @@
       "router": {
         "origin": false
       },
-      "PRODUCT_NAME": "my-mooder-frontend",
-      "APP_NAME": "my-mooder-frontend",
-      "EAS_BUILD_PROFILE": "test",
-      "NODE_ENV": "test",
       "eas": {
         "projectId": "07f9bcea-1d39-49dd-b0fc-e263cdc7dc6f"
       }
