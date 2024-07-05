@@ -142,8 +142,8 @@ This section review steps for setting up technologies required to run a React Na
         # Install the Android File-Watching Service, Watchman
         brew install watchman
 
-        # Install the Android SDK on a Mac with Homebrew
-        brew install android-sdk
+        # Install the Android SDK on a Mac with Homebrew from https://formulae.brew.sh/cask/android-studio
+        brew install --cask android-studio
 
         # This may prompt that you need the Java SDK version 8, in which case, install it with:
         brew install --cask zulu@17
